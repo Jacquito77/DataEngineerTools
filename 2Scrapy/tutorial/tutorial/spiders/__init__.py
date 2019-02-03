@@ -3,6 +3,7 @@
 # Please refer to the documentation for information on how to create and manage
 # your spiders.
 import scrapy
+import json
 
 class MagicCorpSpider(scrapy.Spider):
     name = "Image and cards name"
@@ -49,3 +50,5 @@ class MagicCorpSpider(scrapy.Spider):
                 }
 
                 yield scraped_info
+                with open('result.json', 'w') as fp:
+                    json.dump(zip, fp)
