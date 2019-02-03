@@ -1,0 +1,38 @@
+#Cards {
+    width : 65%;
+    left : 1%;
+    position: absolute;
+    border: #black;
+    border-style: solid;
+    border-width: medium;
+    background-color: #dbdbdb;
+}
+
+#List {
+    width: 30%;
+    left: 70%;
+    position: sticky;
+    border: black;
+    border-style: solid;
+    border-width: medium;
+    background-color: gainsboro;
+    padding-right: 0%;
+}
+
+.titres_cc{
+    text-align : center;
+}
+
+body{
+    background-color : #5f6480;
+}
+
+.cardlist a span { 
+    display:none; 
+} 
+
+.cardlist a:hover span { 
+    display:block; 
+    margin:0 0 0 0: 
+}
+

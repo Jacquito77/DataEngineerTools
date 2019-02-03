@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <body>
+    <div id="Desc">
+    <h1>Bienvenue sur la Draft Magic !</h1>
+    </div >
+    <div id="Cards">
+    <br>
+    
+    {% for i in range(15) %}
+   <img  src={{cards[0][i].image}} alt={{cards[0][i].name}} onclick={{"removeImage("+i|string+");"}} id={{"imgClickAndChange"+i|string}} style="width:256px;height:370px;" />
+    {% endfor %}
+    </div>
+    <div id="List" class="cardlist"> 
+<h2 style="text-align: center;"> Cartes choisies</h2>
+</div>
+    <div id="Adv">
+    </div>
+    
+<!--
+    
+   <div id="clickme2">
+   {% for i in range(15) %}
+   <img  src={{cards[i].image}} alt={{cards[i].name}} onclick={{"removeImage("+i|string+");"}} id={{"imgClickAndChange"+i|string}} style="width:256px;height:370px;" />
+    {% endfor %}
+</div>
+
+<div id="List" class="cardlist"> 
+<h2 style="text-align: center;"> Cartes choisies</h2>
+</div>
+
+    -->
+
+<script>
+
+
+function changeImage(int) {
+
+        if (document.getElementById("imgClickAndChange"+int).src == "{{cards[0].image}}") 
+        {
+            document.getElementById("imgClickAndChange"+int).src = "{{cards[1].image}}";
+        }
+        else 
+        {
+            document.getElementById("imgClickAndChange"+int).src = "{{cards[0].image}}";
+        }
+    }
+
+function removeImage(int) {    
+
+            var element = document.getElementById("imgClickAndChange"+int)
+            element.parentNode.removeChild(element);
+            var element2 = document.getElementById("List");
+            var content =  document.createElement('div');
+            var str = "{{cards[0].name}}";
+            switch (int) {
+            case 0:
+            content.innerHTML = "<p><a href=#>{{cards[0][0].name}}<span><img src={{cards[0][0].image}} alt={{cards[0][0].gametext}}/></span></a></p>";
+            break;
+            case 1:
+            content.innerHTML = "<p><a href=#>{{cards[0][1].name}}<span><img src={{cards[0][1].image}} alt={{cards[0][1].gametext}}/></span></a></p>";
+            break;
+            case 2:
+            content.innerHTML = "<p><a href=#>{{cards[0][2].name}}<span><img src={{cards[0][2].image}} alt={{cards[0][2].gametext}}/></span></a></p>";
+            break;
+            case 3:
+            content.innerHTML = "<p><a href=#>{{cards[0][3].name}}<span><img src={{cards[0][3].image}} alt={{cards[0][3].gametext}}/></span></a></p>";
+            break;
+            case 4:
+            content.innerHTML = "<p><a href=#>{{cards[0][4].name}}<span><img src={{cards[0][4].image}} alt={{cards[0][4].gametext}}/></span></a></p>";
+            break;
+            case 5:
+            content.innerHTML = "<p><a href=#>{{cards[0][5].name}}<span><img src={{cards[0][5].image}} alt={{cards[0][5].gametext}}/></span></a></p>";
+            break;
+            case 6:
+            content.innerHTML = "<p><a href=#>{{cards[0][6].name}}<span><img src={{cards[0][6].image}} alt={{cards[0][6].gametext}}/></span></a></p>";
+            break;
+            case 7:
+            content.innerHTML = "<p><a href=#>{{cards[0][7].name}}<span><img src={{cards[0][7].image}} alt={{cards[0][7].gametext}}/></span></a></p>";
+            break;
+            case 8:
+            content.innerHTML = "<p><a href=#>{{cards[0][8].name}}<span><img src={{cards[0][8].image}} alt={{cards[0][8].gametext}}/></span></a></p>";
+            break;
+            case 9:
+            content.innerHTML = "<p><a href=#>{{cards[0][9].name}}<span><img src={{cards[0][9].image}} alt={{cards[0][9].gametext}}/></span></a></p>";
+            break;
+            case 10:
+            content.innerHTML = "<p><a href=#>{{cards[0][10].name}}<span><img src={{cards[0][10].image}} alt={{cards[0][10].gametext}}/></span></a></p>";
+            break;
+            case 11:
+            content.innerHTML = "<p><a href=#>{{cards[0][11].name}}<span><img src={{cards[0][11].image}} alt={{cards[0][11].gametext}}/></span></a></p>";
+            break;
+            case 12:
+            content.innerHTML = "<p><a href=#>{{cards[0][12].name}}<span><img src={{cards[0][12].image}} alt={{cards[0][12].gametext}}/></span></a></p>";
+            break;
+            case 13:
+            content.innerHTML = "<p><a href=#>{{cards[0][13].name}}<span><img src={{cards[0][13].image}} alt={{cards[0][13].gametext}}/></span></a></p>";
+            break;
+            case 14:
+            content.innerHTML = "<p><a href=#>{{cards[0][14].name}}<span><img src={{cards[0][14].image}} alt={{cards[0][14].gametext}}/></span></a></p>";
+            break;
+            }
+            element2.appendChild(content);
+    
+        }
+</script>
+</body>
+</html>
+
+
+    
+    </body>
+{% endblock %}
+
+

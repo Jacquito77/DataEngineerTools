@@ -1,0 +1,15 @@
+<html>
+    <head>
+     <link href="{{ url_for('static', filename='ind1.css') }}" rel="stylesheet" type="text/css" />
+      {% if title %}
+      <title>{{ title }} - Draft Magic</title>
+      {% else %}
+      <title>Bienvenue sur la simulation de draft Magic</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Accueil: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
