@@ -85,66 +85,9 @@ def index():
     cards1_15=[];
     cards2_15=[];
     cards3_15=[];
-    for i in range(15):
+    for i in range(60):
         cards1_1.append(cards[random.randrange(0, 5, 1)])
-        cards2_1.append(cards[random.randrange(0, 5, 1)])
-        cards3_1.append(cards[random.randrange(0, 5, 1)])
-    for i in range(14):
-        cards1_2.append(cards[random.randrange(0, 5, 1)])
-        cards2_2.append(cards[random.randrange(0, 5, 1)])
-        cards3_2.append(cards[random.randrange(0, 5, 1)])
-    for i in range(13):
-        cards1_3.append(cards[random.randrange(0, 5, 1)])
-        cards2_3.append(cards[random.randrange(0, 5, 1)])
-        cards3_3.append(cards[random.randrange(0, 5, 1)])
-    for i in range(12):
-        cards1_4.append(cards[random.randrange(0, 5, 1)])
-        cards2_4.append(cards[random.randrange(0, 5, 1)])
-        cards3_4.append(cards[random.randrange(0, 5, 1)])
-    for i in range(11):
-        cards1_5.append(cards[random.randrange(0, 5, 1)])
-        cards2_5.append(cards[random.randrange(0, 5, 1)])
-        cards3_5.append(cards[random.randrange(0, 5, 1)])
-    for i in range(10):
-        cards1_6.append(cards[random.randrange(0, 5, 1)])
-        cards2_6.append(cards[random.randrange(0, 5, 1)])
-        cards3_6.append(cards[random.randrange(0, 5, 1)])
-    for i in range(9):
-        cards1_7.append(cards[random.randrange(0, 5, 1)])
-        cards2_7.append(cards[random.randrange(0, 5, 1)])
-        cards3_7.append(cards[random.randrange(0, 5, 1)])
-    for i in range(8):
-        cards1_8.append(cards[random.randrange(0, 5, 1)])
-        cards2_8.append(cards[random.randrange(0, 5, 1)])
-        cards3_8.append(cards[random.randrange(0, 5, 1)])
-    for i in range(7):
-        cards1_9.append(cards[random.randrange(0, 5, 1)])
-        cards2_9.append(cards[random.randrange(0, 5, 1)])
-        cards3_9.append(cards[random.randrange(0, 5, 1)])
-    for i in range(6):
-        cards1_10.append(cards[random.randrange(0, 5, 1)])
-        cards2_10.append(cards[random.randrange(0, 5, 1)])
-        cards3_10.append(cards[random.randrange(0, 5, 1)])
-    for i in range(5):
-        cards1_11.append(cards[random.randrange(0, 5, 1)])
-        cards2_11.append(cards[random.randrange(0, 5, 1)])
-        cards3_11.append(cards[random.randrange(0, 5, 1)])
-    for i in range(4):
-        cards1_12.append(cards[random.randrange(0, 5, 1)])
-        cards2_12.append(cards[random.randrange(0, 5, 1)])
-        cards3_12.append(cards[random.randrange(0, 5, 1)])
-    for i in range(3):
-        cards1_13.append(cards[random.randrange(0, 5, 1)])
-        cards2_13.append(cards[random.randrange(0, 5, 1)])
-        cards3_13.append(cards[random.randrange(0, 5, 1)])
-    for i in range(2):
-        cards1_14.append(cards[random.randrange(0, 5, 1)])
-        cards2_14.append(cards[random.randrange(0, 5, 1)])
-        cards3_14.append(cards[random.randrange(0, 5, 1)])
-    for i in range(1):
-        cards1_15.append(cards[random.randrange(0, 5, 1)])
-        cards2_15.append(cards[random.randrange(0, 5, 1)])
-        cards3_15.append(cards[random.randrange(0, 5, 1)])
+
     
         
     

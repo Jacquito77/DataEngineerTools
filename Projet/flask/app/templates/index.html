@@ -3,17 +3,21 @@
 {% block content %}
     <body>
     <div id="Desc">
-    <h1>Bienvenue sur la Draft Magic !</h1>
+    <h1>Bienvenue sur le paquet scellé Magic !</h1>
     </div >
     <div id="Cards">
     <br>
     
-    {% for i in range(15) %}
+    {% for i in range(60) %}
    <img  src={{cards[0][i].image}} alt={{cards[0][i].name}} onclick={{"removeImage("+i|string+");"}} id={{"imgClickAndChange"+i|string}} style="width:256px;height:370px;" />
     {% endfor %}
     </div>
-    <div id="List" class="cardlist"> 
-<h2 style="text-align: center;"> Cartes choisies</h2>
+    <div id="List" class="cardlist">
+ 
+<h2 style="text-align: center;"> Cartes choisies : </h2>
+    <div id="Turn">
+    </div>
+
 </div>
     <div id="Adv">
     </div>
@@ -33,27 +37,19 @@
     -->
 
 <script>
+var NB = 0;
+var pick = 1;
+
+function changeTurn() {
 
 
-function changeImage(int) {
+}
 
-        if (document.getElementById("imgClickAndChange"+int).src == "{{cards[0].image}}") 
-        {
-            document.getElementById("imgClickAndChange"+int).src = "{{cards[1].image}}";
-        }
-        else 
-        {
-            document.getElementById("imgClickAndChange"+int).src = "{{cards[0].image}}";
-        }
-    }
-
-function removeImage(int) {    
-
-            var element = document.getElementById("imgClickAndChange"+int)
+function removeImages(int) {
+            var element = document.getElementById("Cards")
             element.parentNode.removeChild(element);
             var element2 = document.getElementById("List");
             var content =  document.createElement('div');
-            var str = "{{cards[0].name}}";
             switch (int) {
             case 0:
             content.innerHTML = "<p><a href=#>{{cards[0][0].name}}<span><img src={{cards[0][0].image}} alt={{cards[0][0].gametext}}/></span></a></p>";
@@ -100,10 +96,213 @@ function removeImage(int) {
             case 14:
             content.innerHTML = "<p><a href=#>{{cards[0][14].name}}<span><img src={{cards[0][14].image}} alt={{cards[0][14].gametext}}/></span></a></p>";
             break;
+            case 15:
+            content.innerHTML = "<p><a href=#>{{cards[0][15].name}}<span><img src={{cards[0][15].image}} alt={{cards[0][15].gametext}}/></span></a></p>";
+            break;
             }
             element2.appendChild(content);
+            
+}
+
     
+
+function removeImage(int) {
+            if (NB==40) {
+            alert( "Vous avez completé votre deck ! Vous pouvez recommencer en appuyant sur le lien Recommencer ou en actualisant.")
+            }
+            else {
+            NB = NB + 1;    
+            alert(NB +" choix sur 40");
+            var element = document.getElementById("imgClickAndChange"+int)
+            element.parentNode.removeChild(element);
+            var element2 = document.getElementById("List");
+            var content =  document.createElement('div');
+            switch (int) {
+            case 0:
+            content.innerHTML = "<p><a href=#>{{cards[0][0].name}}<span><img src={{cards[0][0].image}} alt={{cards[0][0].gametext}}/></span></a></p>";
+            break;
+            case 1:
+            content.innerHTML = "<p><a href=#>{{cards[0][1].name}}<span><img src={{cards[0][1].image}} alt={{cards[0][1].gametext}}/></span></a></p>";
+            break;
+            case 2:
+            content.innerHTML = "<p><a href=#>{{cards[0][2].name}}<span><img src={{cards[0][2].image}} alt={{cards[0][2].gametext}}/></span></a></p>";
+            break;
+            case 3:
+            content.innerHTML = "<p><a href=#>{{cards[0][3].name}}<span><img src={{cards[0][3].image}} alt={{cards[0][3].gametext}}/></span></a></p>";
+            break;
+            case 4:
+            content.innerHTML = "<p><a href=#>{{cards[0][4].name}}<span><img src={{cards[0][4].image}} alt={{cards[0][4].gametext}}/></span></a></p>";
+            break;
+            case 5:
+            content.innerHTML = "<p><a href=#>{{cards[0][5].name}}<span><img src={{cards[0][5].image}} alt={{cards[0][5].gametext}}/></span></a></p>";
+            break;
+            case 6:
+            content.innerHTML = "<p><a href=#>{{cards[0][6].name}}<span><img src={{cards[0][6].image}} alt={{cards[0][6].gametext}}/></span></a></p>";
+            break;
+            case 7:
+            content.innerHTML = "<p><a href=#>{{cards[0][7].name}}<span><img src={{cards[0][7].image}} alt={{cards[0][7].gametext}}/></span></a></p>";
+            break;
+            case 8:
+            content.innerHTML = "<p><a href=#>{{cards[0][8].name}}<span><img src={{cards[0][8].image}} alt={{cards[0][8].gametext}}/></span></a></p>";
+            break;
+            case 9:
+            content.innerHTML = "<p><a href=#>{{cards[0][9].name}}<span><img src={{cards[0][9].image}} alt={{cards[0][9].gametext}}/></span></a></p>";
+            break;
+            case 10:
+            content.innerHTML = "<p><a href=#>{{cards[0][10].name}}<span><img src={{cards[0][10].image}} alt={{cards[0][10].gametext}}/></span></a></p>";
+            break;
+            case 11:
+            content.innerHTML = "<p><a href=#>{{cards[0][11].name}}<span><img src={{cards[0][11].image}} alt={{cards[0][11].gametext}}/></span></a></p>";
+            break;
+            case 12:
+            content.innerHTML = "<p><a href=#>{{cards[0][12].name}}<span><img src={{cards[0][12].image}} alt={{cards[0][12].gametext}}/></span></a></p>";
+            break;
+            case 13:
+            content.innerHTML = "<p><a href=#>{{cards[0][13].name}}<span><img src={{cards[0][13].image}} alt={{cards[0][13].gametext}}/></span></a></p>";
+            break;
+            case 14:
+            content.innerHTML = "<p><a href=#>{{cards[0][14].name}}<span><img src={{cards[0][14].image}} alt={{cards[0][14].gametext}}/></span></a></p>";
+            break;
+            case 15:
+            content.innerHTML = "<p><a href=#>{{cards[0][15].name}}<span><img src={{cards[0][15].image}} alt={{cards[0][15].gametext}}/></span></a></p>";
+            break;
+            case 16:
+            content.innerHTML = "<p><a href=#>{{cards[0][16].name}}<span><img src={{cards[0][16].image}} alt={{cards[0][16].gametext}}/></span></a></p>";
+            break;
+            case 17:
+            content.innerHTML = "<p><a href=#>{{cards[0][17].name}}<span><img src={{cards[0][17].image}} alt={{cards[0][17].gametext}}/></span></a></p>";
+            break;
+            case 18:
+            content.innerHTML = "<p><a href=#>{{cards[0][18].name}}<span><img src={{cards[0][18].image}} alt={{cards[0][18].gametext}}/></span></a></p>";
+            break;
+            case 19:
+            content.innerHTML = "<p><a href=#>{{cards[0][19].name}}<span><img src={{cards[0][19].image}} alt={{cards[0][19].gametext}}/></span></a></p>";
+            break;
+            case 20:
+            content.innerHTML = "<p><a href=#>{{cards[0][20].name}}<span><img src={{cards[0][20].image}} alt={{cards[0][20].gametext}}/></span></a></p>";
+            break;
+            case 21:
+            content.innerHTML = "<p><a href=#>{{cards[0][21].name}}<span><img src={{cards[0][21].image}} alt={{cards[0][21].gametext}}/></span></a></p>";
+            break;
+            case 22:
+            content.innerHTML = "<p><a href=#>{{cards[0][22].name}}<span><img src={{cards[0][22].image}} alt={{cards[0][22].gametext}}/></span></a></p>";
+            break;
+            case 23:
+            content.innerHTML = "<p><a href=#>{{cards[0][23].name}}<span><img src={{cards[0][23].image}} alt={{cards[0][23].gametext}}/></span></a></p>";
+            break;
+            case 24:
+            content.innerHTML = "<p><a href=#>{{cards[0][24].name}}<span><img src={{cards[0][24].image}} alt={{cards[0][24].gametext}}/></span></a></p>";
+            break;
+            case 25:
+            content.innerHTML = "<p><a href=#>{{cards[0][25].name}}<span><img src={{cards[0][25].image}} alt={{cards[0][25].gametext}}/></span></a></p>";
+            break;
+            case 26:
+            content.innerHTML = "<p><a href=#>{{cards[0][26].name}}<span><img src={{cards[0][26].image}} alt={{cards[0][26].gametext}}/></span></a></p>";
+            break;
+            case 27:
+            content.innerHTML = "<p><a href=#>{{cards[0][27].name}}<span><img src={{cards[0][27].image}} alt={{cards[0][27].gametext}}/></span></a></p>";
+            break;
+            case 28:
+            content.innerHTML = "<p><a href=#>{{cards[0][28].name}}<span><img src={{cards[0][28].image}} alt={{cards[0][28].gametext}}/></span></a></p>";
+            break;
+            case 29:
+            content.innerHTML = "<p><a href=#>{{cards[0][29].name}}<span><img src={{cards[0][29].image}} alt={{cards[0][29].gametext}}/></span></a></p>";
+            break;
+            case 30:
+            content.innerHTML = "<p><a href=#>{{cards[0][30].name}}<span><img src={{cards[0][30].image}} alt={{cards[0][30].gametext}}/></span></a></p>";
+            break;
+            case 31:
+            content.innerHTML = "<p><a href=#>{{cards[0][31].name}}<span><img src={{cards[0][31].image}} alt={{cards[0][31].gametext}}/></span></a></p>";
+            break;
+            case 32:
+            content.innerHTML = "<p><a href=#>{{cards[0][32].name}}<span><img src={{cards[0][32].image}} alt={{cards[0][32].gametext}}/></span></a></p>";
+            break;
+            case 33:
+            content.innerHTML = "<p><a href=#>{{cards[0][33].name}}<span><img src={{cards[0][33].image}} alt={{cards[0][33].gametext}}/></span></a></p>";
+            break;
+            case 34:
+            content.innerHTML = "<p><a href=#>{{cards[0][34].name}}<span><img src={{cards[0][34].image}} alt={{cards[0][34].gametext}}/></span></a></p>";
+            break;
+            case 35:
+            content.innerHTML = "<p><a href=#>{{cards[0][35].name}}<span><img src={{cards[0][35].image}} alt={{cards[0][35].gametext}}/></span></a></p>";
+            break;
+            case 36:
+            content.innerHTML = "<p><a href=#>{{cards[0][36].name}}<span><img src={{cards[0][36].image}} alt={{cards[0][36].gametext}}/></span></a></p>";
+            break;
+            case 37:
+            content.innerHTML = "<p><a href=#>{{cards[0][37].name}}<span><img src={{cards[0][37].image}} alt={{cards[0][37].gametext}}/></span></a></p>";
+            break;
+            case 38:
+            content.innerHTML = "<p><a href=#>{{cards[0][38].name}}<span><img src={{cards[0][38].image}} alt={{cards[0][38].gametext}}/></span></a></p>";
+            break;
+            case 39:
+            content.innerHTML = "<p><a href=#>{{cards[0][39].name}}<span><img src={{cards[0][39].image}} alt={{cards[0][39].gametext}}/></span></a></p>";
+            break;
+            case 40:
+            content.innerHTML = "<p><a href=#>{{cards[0][0].name}}<span><img src={{cards[0][40].image}} alt={{cards[0][40].gametext}}/></span></a></p>";
+            break;
+            case 41:
+            content.innerHTML = "<p><a href=#>{{cards[0][41].name}}<span><img src={{cards[0][41].image}} alt={{cards[0][41].gametext}}/></span></a></p>";
+            break;
+            case 42:
+            content.innerHTML = "<p><a href=#>{{cards[0][42].name}}<span><img src={{cards[0][42].image}} alt={{cards[0][42].gametext}}/></span></a></p>";
+            break;
+            case 43:
+            content.innerHTML = "<p><a href=#>{{cards[0][43].name}}<span><img src={{cards[0][43].image}} alt={{cards[0][43].gametext}}/></span></a></p>";
+            break;
+            case 44:
+            content.innerHTML = "<p><a href=#>{{cards[0][44].name}}<span><img src={{cards[0][44].image}} alt={{cards[0][44].gametext}}/></span></a></p>";
+            break;
+            case 45:
+            content.innerHTML = "<p><a href=#>{{cards[0][45].name}}<span><img src={{cards[0][45].image}} alt={{cards[0][45].gametext}}/></span></a></p>";
+            break;
+            case 46:
+            content.innerHTML = "<p><a href=#>{{cards[0][46].name}}<span><img src={{cards[0][46].image}} alt={{cards[0][46].gametext}}/></span></a></p>";
+            break;
+            case 47:
+            content.innerHTML = "<p><a href=#>{{cards[0][47].name}}<span><img src={{cards[0][47].image}} alt={{cards[0][47].gametext}}/></span></a></p>";
+            break;
+            case 48:
+            content.innerHTML = "<p><a href=#>{{cards[0][48].name}}<span><img src={{cards[0][48].image}} alt={{cards[0][48].gametext}}/></span></a></p>";
+            break;
+            case 49:
+            content.innerHTML = "<p><a href=#>{{cards[0][49].name}}<span><img src={{cards[0][49].image}} alt={{cards[0][49].gametext}}/></span></a></p>";
+            break;
+            case 50:
+            content.innerHTML = "<p><a href=#>{{cards[0][50].name}}<span><img src={{cards[0][50].image}} alt={{cards[0][50].gametext}}/></span></a></p>";
+            break;
+            case 51:
+            content.innerHTML = "<p><a href=#>{{cards[0][51].name}}<span><img src={{cards[0][51].image}} alt={{cards[0][51].gametext}}/></span></a></p>";
+            break;
+            case 52:
+            content.innerHTML = "<p><a href=#>{{cards[0][52].name}}<span><img src={{cards[0][52].image}} alt={{cards[0][52].gametext}}/></span></a></p>";
+            break;
+            case 53:
+            content.innerHTML = "<p><a href=#>{{cards[0][53].name}}<span><img src={{cards[0][53].image}} alt={{cards[0][53].gametext}}/></span></a></p>";
+            break;
+            case 54:
+            content.innerHTML = "<p><a href=#>{{cards[0][54].name}}<span><img src={{cards[0][54].image}} alt={{cards[0][54].gametext}}/></span></a></p>";
+            break;
+            case 55:
+            content.innerHTML = "<p><a href=#>{{cards[0][55].name}}<span><img src={{cards[0][55].image}} alt={{cards[0][55].gametext}}/></span></a></p>";
+            break;
+            case 56:
+            content.innerHTML = "<p><a href=#>{{cards[0][56].name}}<span><img src={{cards[0][56].image}} alt={{cards[0][56].gametext}}/></span></a></p>";
+            break;
+            case 57:
+            content.innerHTML = "<p><a href=#>{{cards[0][57].name}}<span><img src={{cards[0][57].image}} alt={{cards[0][57].gametext}}/></span></a></p>";
+            break;
+            case 58:
+            content.innerHTML = "<p><a href=#>{{cards[0][58].name}}<span><img src={{cards[0][58].image}} alt={{cards[0][58].gametext}}/></span></a></p>";
+            break;
+            case 59:
+            content.innerHTML = "<p><a href=#>{{cards[0][59].name}}<span><img src={{cards[0][59].image}} alt={{cards[0][59].gametext}}/></span></a></p>";
+            break;
+            }
+            element2.appendChild(content);
+            }
         }
+        
 </script>
 </body>
 </html>
