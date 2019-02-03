@@ -6,7 +6,7 @@ import scrapy
 import json
 
 class MagicCorpSpider(scrapy.Spider):
-    name = "Image and cards name"
+    name = "cards"
     start_urls = ["http://www.magiccorporation.com/mc.php?rub=cartes&op=edition&num=225&mode=hybrid",]
 
     def parse(self, response):
@@ -50,5 +50,3 @@ class MagicCorpSpider(scrapy.Spider):
                 }
 
                 yield scraped_info
-                with open('result.json', 'w') as fp:
-                    json.dump(zip, fp)
