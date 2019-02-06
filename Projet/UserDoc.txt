@@ -1,0 +1,18 @@
+Ce projet a été réalisé grâce au framework flask associé à du HTML/CSS et du JavaScript. 
+Mongodb a été utilisé mais n'a pu etre implemanté et nous avons également récuperer des données grâce a du scrapping.
+
+L'objectif de notre application à été de recréer le processus de création de deck dans le cadre du mode de jeu paquet scéllé :
+
+Lorsque l'on se retrouve sur la page d'accueil, 60 cartes sont affichés. l'utilisateur peut alors cliquer au fur et a mésure sur les cartes
+pour selectionner celles qu'il aura choisi. Les cartes séléctionnées sont alors retirées de la "galeries des cartes" et mis dans la liste se
+trouvant à droite.
+
+Pour demmarer l'application :
+Au préalable il faut que flask soit installé
+
+
+Ouvrir un terminal 
+Il faut se mettre sur au niveau du répertoire flask 
+taper la commande : flask run
+
+Sur un navigateur dans la barre url : http://localhost:5000/index
